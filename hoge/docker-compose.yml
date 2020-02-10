@@ -10,6 +10,7 @@ services:
     ports:
       - ${PORT_MYSQL:-3306}:3306
     networks:
+      - default
       - database
 
 networks:
