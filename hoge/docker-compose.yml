@@ -9,3 +9,8 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
       - ${PORT_MYSQL:-3306}:3306
+
+networks:
+  default:
+    name: hogefuga_default_network
+    driver: bridge

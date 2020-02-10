@@ -2,3 +2,8 @@ version: "3.7"
 services:
   php:
     build: docker/php
+
+networks:
+  default:
+    name: hogefuga_default_network
+    driver: bridge
