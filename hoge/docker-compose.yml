@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  alpine:
+    build: docker/alpine
+
+  mysql:
+    build: docker/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - ${PORT_MYSQL:-3306}:3306
+    networks:
+      - default
+      - database
+
+networks:
+  database:
+    name: hogefuga_database_network
+    driver: bridge
